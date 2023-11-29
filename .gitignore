@@ -5,6 +5,8 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 /Assets/RenderModel_Tests/vr_controller_vive_1_5
+/bin/
+/Logs/
 
 # Visual Studio 2015 cache directory
 /.vs/
