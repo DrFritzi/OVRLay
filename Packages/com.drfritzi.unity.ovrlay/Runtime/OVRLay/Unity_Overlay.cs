@@ -57,6 +57,8 @@ public class Unity_Overlay : MonoBehaviour
 
 	[Range(0f, 1f)] public float opacity = 1.0f;
 	public float widthInMeters = 1.0f;
+	public bool customAspectRatio = false;
+	public float overlayAspect;
 	public Color colorTint = Color.white;
 	public bool useChaperoneColor = false;
 
@@ -387,9 +389,11 @@ public class Unity_Overlay : MonoBehaviour
 		}
 		
 		overlay.overlayWidthInMeters = widthInMeters;
+		
+		overlay.overlayAspect = overlayAspect;
+		overlay.customAspectRatio = customAspectRatio;
 		overlay.overlayTextureBounds = textureBounds;
 		overlay.overlayMouseScale = mouseScale_t;
-		
 		if(overlayTexture)
 			reverseAspect = (float) overlayTexture.height / (float) overlayTexture.width;
 		else
@@ -542,18 +546,30 @@ public class Unity_Overlay : MonoBehaviour
 			opts.colorTint = colorTint;
 		}
 
-		if( opts.opacity != opacity ) 
+		if(!Mathf.Approximately(opts.opacity, opacity )) 
 		{
 			overlay.overlayAlpha = opacity;
 
 			opts.opacity = opacity;
 		}
 
-		if( opts.widthInMeters != widthInMeters ) 
+		if(!Mathf.Approximately(opts.widthInMeters, widthInMeters) ) 
 		{
 			overlay.overlayWidthInMeters = widthInMeters;
 
 			opts.widthInMeters = widthInMeters;
+		}
+		
+		if(!Mathf.Approximately(opts.overlayAspect, overlayAspect))
+		{
+			overlay.overlayAspect = overlayAspect;
+			opts.overlayAspect = overlayAspect;
+		}
+		
+		if(opts.customAspectRatio != customAspectRatio)
+		{
+			overlay.customAspectRatio = customAspectRatio;
+			opts.customAspectRatio = customAspectRatio;
 		}
 
 		if(opts.sideBySideParallel != sideBySideParallel)
@@ -762,6 +778,8 @@ public struct Unity_Overlay_Opts
 	public Color colorTint;
 	public float opacity;
 	public float widthInMeters;
+	public bool customAspectRatio;
+	public float overlayAspect;
 
 	public Unity_Overlay.OverlayTrackedDevice deviceToTrack;
 	public uint customDeviceIndex;

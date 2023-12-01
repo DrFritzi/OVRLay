@@ -9,6 +9,7 @@ public partial class OVR_Overlay
         overlayColor = _overlayColor;
         overlayAlpha = _overlayAlpha;
         overlayWidthInMeters = _overlayWidthInMeters;
+        overlayAspect = _overlayAspect;
         overlayTextureBounds = _overlayTextureBounds;
 
         overlayTransformType = _overlayTransformType;

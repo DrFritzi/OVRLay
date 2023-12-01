@@ -124,6 +124,46 @@ public partial class OVR_Overlay
                 error = Overlay.SetOverlayWidthInMeters(_overlayHandle, value);
         }
     }
+    
+    protected bool _customAspectRatio = false;
+    
+    public bool customAspectRatio
+    {
+        get { return _customAspectRatio; }
+        set
+        {
+            _customAspectRatio = value;
+            SetAspectRatio();
+        }
+    }
+    
+    private void SetAspectRatio()
+    {
+        if(OverlayExists && validHandle)
+        {
+            float aspect = 1;
+            if(_customAspectRatio)
+                aspect = _overlayAspect;
+            error = Overlay.SetOverlayTexelAspect(_overlayHandle, aspect);
+        }
+    }
+    
+    protected float _overlayAspect = 16f / 9f;
+    
+    public float overlayAspect
+    {
+        get
+        {
+            if(_customAspectRatio)
+                return _overlayAspect;
+            return 1;
+        }
+        set
+        {
+            _overlayAspect = value;
+            SetAspectRatio();
+        }
+    }
 
     // Skipping overlayAutoCurveDistanceRangeInMeters
 
