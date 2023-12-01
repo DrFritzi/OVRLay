@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using UnityEngine;
 using Valve.VR;
 
@@ -6,7 +6,6 @@ public partial class OVR_Overlay
 {
     public bool UpdateCurrentOverlay()
     {
-        overlayHighQuality = _overlayHighQuality;
         overlayColor = _overlayColor;
         overlayAlpha = _overlayAlpha;
         overlayWidthInMeters = _overlayWidthInMeters;
@@ -57,8 +56,12 @@ public partial class OVR_Overlay
     {
         _isMinimal = minimal;
         
-        if(OverlayExists)
-            error = Overlay.ShowKeyboard(0, 0, dscrp, 256, fillTxt, minimal, 0);
+        //TODO: This needs to be updated and tested
+        //uint unflags = 0;
+        
+        //if(OverlayExists)
+        //    error = Overlay.ShowKeyboard(0, 0, unflags ,dscrp, 256, fillTxt, minimal, 0);
+        throw new NotImplementedException("Function not updated");
 
         return !ErrorCheck(error);
     }

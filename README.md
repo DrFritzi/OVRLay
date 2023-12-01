@@ -67,9 +67,9 @@ That should get you the most basic form of a working SteamVR Overlay, check out 
 Advanced Usage (Technical)
 ===
 
-## Coming Soon! 
+Uses the headers from OpenVR SDK 2.0.10 (https://github.com/ValveSoftware/openvr/blob/master/headers/openvr_api.cs) and its openvr_api.dll (https://github.com/ValveSoftware/openvr/tree/master/bin/win64).
+These are under BSD 3 license (https://github.com/ValveSoftware/openvr/blob/master/LICENSE).
 
-But I'm not gonna be that guy, and leave you in the dark. 
 
 The **OVR_Handler** class found in it's folder/files, and **OVR_Overlay / OVR_Overlay_Handler** classes in their folder/files, contain everything you would need to skip the prefabs, and spin your own Unity Interaction Handling while just using some easier-for-unity abstractions for SteamVR stuff.
 
