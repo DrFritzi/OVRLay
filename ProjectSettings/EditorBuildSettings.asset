@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/OVRLay/Scenes/Overlays Example.unity
+    guid: bcb19c651de338242b8de5de791fb33b
+  m_configObjects: {}
