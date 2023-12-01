@@ -1,7 +1,8 @@
-# OVRLay (1.3)
+# OVRLay (1.4.0-preview.1)
 
 A(n)? (Hopefully) Easy-to-use toolkit for developing OpenVR Overlays with Unity Engine!
 
+This project has been asleep for 3 years, so some features might not work anymore.
 ---
 
 What is OVRLay?
@@ -12,26 +13,27 @@ OVRLay is a small toolkit for creating Overlays for Open/Steam VR,
 It provides the neccassary OpenVR API's, Plugins, and Unity Prefabs to enable a sort of drag-and-drop ease of use.
 
 ## Features
-- Implements and Supports most OpenVR Overlay Features / Settings / Flags!
+- Implements and Supports most OpenVR Overlay Features / Settings / Flags! (from ~2020)
 
 - Create and Manipulate Both In-Game, and Dashboard Menu Overlays!
-
-- Load in OBJ (WaveFront) files as RenderModels, and attach them to overlays!
 
 - Support for the latest Stable Release of Unity (2022.3.14f1)!
 
 - Does not use Unity's Built-In OpenVR support, but has its own OpenVR Handler that deals with getting a connection to SteamVR, getting the HMD and Right/Left controller positions, and updating / handling Overlay Relevant OpenVR events!
 
-- Has drop-in support for interaction with unmodified UnityUI, by simulating mouse screen cords via a in-scene camera! (Just make sure to position camera to look at WorldSpace UI!)
+- Has drop-in support for interaction with unmodified UnityUI, by simulating mouse screen cords via a in-scene camera! (Just make sure to position camera to look at WorldSpace UI!) (untested)
 
 If you have any Questions, Comments, Feedback, or find any bugs, Please Let me know!
 
 Download:
 ===
 
-Grab the latest Unity Package from Releases, [found here!](https://github.com/benotter/OVRLay/releases)
+Add the package to your project as git Package. In your manifest.json add this line as dependency:
+"com.drfritzi.unity.ovrlay": "https://github.com/DrFritzi/OVRLay.git?path=/Packages/com.drfritzi.unity.ovrlay#1.4.0-preview.1",
 
-Then just import it into a new blank scene!
+To update, change the version number after the '#'.
+
+Alternatively you can clone this repo and use it as a base. This also allows you to change the package files as needed.
 
 REMEBER TO KEEP UNITY'S BUILT-IN VR SUPPORT OFF!
 
