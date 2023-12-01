@@ -18,7 +18,7 @@ It provides the neccassary OpenVR API's, Plugins, and Unity Prefabs to enable a 
 
 - Load in OBJ (WaveFront) files as RenderModels, and attach them to overlays!
 
-- Support for the lastest Stable Release of Unity (2017.1)!
+- Support for the latest Stable Release of Unity (2022.3.14f1)!
 
 - Does not use Unity's Built-In OpenVR support, but has its own OpenVR Handler that deals with getting a connection to SteamVR, getting the HMD and Right/Left controller positions, and updating / handling Overlay Relevant OpenVR events!
 
@@ -67,9 +67,9 @@ That should get you the most basic form of a working SteamVR Overlay, check out 
 Advanced Usage (Technical)
 ===
 
-## Coming Soon! 
+Uses the headers from OpenVR SDK 2.0.10 (https://github.com/ValveSoftware/openvr/blob/master/headers/openvr_api.cs) and its openvr_api.dll (https://github.com/ValveSoftware/openvr/tree/master/bin/win64).
+These are under BSD 3 license (https://github.com/ValveSoftware/openvr/blob/master/LICENSE).
 
-But I'm not gonna be that guy, and leave you in the dark. 
 
 The **OVR_Handler** class found in it's folder/files, and **OVR_Overlay / OVR_Overlay_Handler** classes in their folder/files, contain everything you would need to skip the prefabs, and spin your own Unity Interaction Handling while just using some easier-for-unity abstractions for SteamVR stuff.
 
@@ -79,5 +79,6 @@ Specifically, the OVR_Overlay class is just an abstractor that 'contains' an ove
 
 Thank you Valve, for OpenVR and Steam! (And Half Life 2!)
 
-<sup><sup>pls hire me volvo, u my oniy hope!</sup></sup>
+## Note
+IL2CPP does not work. Use Mono as backend.
 
